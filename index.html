@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkawFit Support & Help Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00E5FF;
+      --primary-dark: #00B4D8;
+      --bg: #090D16;
+      --card-bg: #111827;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #10B981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
+    .header {
+      background: linear-gradient(180deg, rgba(0, 229, 255, 0.12) 0%, rgba(9, 13, 22, 0) 100%);
+      padding: 60px 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #00E5FF 0%, #0077B6 100%);
+      box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: 900;
+      color: #000;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 229, 255, 0.4);
+    }
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 40px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-banner {
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 24px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact-banner h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .contact-banner p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #00E5FF 0%, #00B4D8 100%);
+      color: #000;
+      font-weight: 800;
+      padding: 14px 32px;
+      border-radius: 99px;
+      text-decoration: none;
+      font-size: 16px;
+      box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 25px rgba(0, 229, 255, 0.5);
+    }
+    .faq-item {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .faq-item h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    a.link {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a.link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-container">S</div>
+    <h1>SkawFit Support Center</h1>
+    <p class="subtitle">Official customer support and help documentation for SkawFit: Workout & Diet Plan on iOS and iPadOS.</p>
+  </header>
+
+  <main class="container">
+
+    <div class="grid">
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <h3>AI Workout Generator</h3>
+        <p>Personalized workout routines, progressive overload tracker, rest timers, and exercise swapping.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🥗</span>
+        <h3>Smart Nutrition</h3>
+        <p>Macro breakdowns, calorie targets, meal suggestions, and 1-tap dynamic hydration tracking.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">⌚</span>
+        <h3>Smartwatch & Health</h3>
+        <p>Sync completed workouts, heart rate, and active calories with Apple Health & Apple Watch.</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h4>How do I reset or regenerate my workout plan?</h4>
+      <p>Navigate to the <strong>Programs</strong> tab, tap on the options menu (...) of your active routine, and select <em>"Regenerate Plan"</em>. You can also edit sets, reps, and exercises anytime directly inside the session.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>How does App Tracking Transparency work in SkawFit?</h4>
+      <p>SkawFit respects your privacy. On iOS and iPadOS, you are presented with the Apple Tracking Transparency dialog upon launching the app. You can choose whether to allow personalized advertisements or opt out completely with zero impact on app functionality.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>How can I request account or data deletion?</h4>
+      <p>You have full ownership of your data. You can delete your account and associated cloud data directly from <strong>Settings &gt; Account &gt; Delete Account</strong>, or by emailing our support team at <a class="link" href="mailto:ferdayounes@gmail.com">ferdayounes@gmail.com</a> with your SkawFit ID.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Is my workout progress saved offline?</h4>
+      <p>Yes! SkawFit is built offline-first. All your workouts, personal records, and notes are securely stored on your device and automatically synced to encrypted cloud backup when online.</p>
+    </div>
+
+    <div class="contact-banner">
+      <h2>Need Help or Have a Question?</h2>
+      <p>Our dedicated support team is available 7 days a week. We typically respond within 24 hours.</p>
+      <a href="mailto:ferdayounes@gmail.com?subject=SkawFit%20App%20Support" class="btn">Contact Support: ferdayounes@gmail.com</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SkawFit: Workout & Diet Plan. Developed by Younes AITNASSAR (SkawLabs). All rights reserved.</p>
+    <p style="margin-top: 6px;">
+      <a class="link" href="mailto:ferdayounes@gmail.com">Contact Us</a> &bull; 
+      <a class="link" href="https://github.com/ferdayounes-oss">Developer Profile</a>
+    </p>
+  </footer>
+
+</body>
+</html>
