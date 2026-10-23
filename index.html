@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SKAW LABS — Official Support Center</title>
+  <link rel="icon" type="image/jpeg" href="Favicon.jpeg">
+  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="Favicon.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -301,9 +305,9 @@
 
   <header class="header">
     <div class="brand-logo-wrap">
-      <!-- Directly load favicon.png uploaded to the repository -->
-      <img src="favicon.png" alt="SKAW LABS" class="brand-img" id="brandLogoImg" 
-           onerror="this.onerror=null; this.src='logo.png';">
+      <!-- Automatically detects Favicon.jpeg, favicon.jpeg, favicon.png, or logo.png -->
+      <img src="Favicon.jpeg" alt="SKAW LABS" class="brand-img" id="brandLogoImg" 
+           onerror="tryNextLogo(this);">
     </div>
     
     <h1 class="brand-title">Developer Support Center</h1>
@@ -390,6 +394,24 @@
   </footer>
 
   <script>
+    const candidateLogos = [
+      'Favicon.jpeg',
+      'favicon.jpeg',
+      'favicon.png',
+      'Favicon.png',
+      'favicon.jpg',
+      'Favicon.jpg',
+      'logo.png',
+      'logo.jpeg'
+    ];
+    let candidateIndex = 0;
+    function tryNextLogo(img) {
+      candidateIndex++;
+      if (candidateIndex < candidateLogos.length) {
+        img.src = candidateLogos[candidateIndex];
+      }
+    }
+
     function copyEmail() {
       const email = 'ferdayounes@gmail.com';
       if (navigator.clipboard && window.isSecureContext) {
