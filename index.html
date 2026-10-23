@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SKAW LABS — Official Support Center</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="icon" type="image/jpeg" href="Favicon.jpeg">
-  <link rel="icon" type="image/jpeg" href="favicon.jpeg">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="Favicon.jpeg">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -76,6 +75,8 @@
       background: transparent;
       padding: 0;
       border: none;
+      mix-blend-mode: screen;
+      border-radius: 16px;
       filter: drop-shadow(0 10px 25px rgba(0, 229, 255, 0.35));
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                   filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -305,9 +306,8 @@
 
   <header class="header">
     <div class="brand-logo-wrap">
-      <!-- Automatically detects Favicon.jpeg, favicon.jpeg, favicon.png, or logo.png -->
-      <img src="Favicon.jpeg" alt="SKAW LABS" class="brand-img" id="brandLogoImg" 
-           onerror="tryNextLogo(this);">
+      <img src="logo.png" alt="SKAW LABS" class="brand-img" id="brandLogoImg" 
+           onerror="if(this.src.indexOf('logo.png')!==-1){this.src='Favicon.jpeg';}else{this.onerror=null;}">
     </div>
     
     <h1 class="brand-title">Developer Support Center</h1>
@@ -376,6 +376,10 @@
         <button type="button" onclick="copyEmail()" class="btn btn-secondary">
           <span>📋 Copy Email Address</span>
         </button>
+        <!-- B2B Coach Portal Direct Access -->
+        <a href="../web/coach/index.html" class="btn" style="background: linear-gradient(135deg, #8A2BE2 0%, #00E5FF 100%); color:#FFF !important;">
+          <span>🏋️‍♂️ Open Coach Web Dashboard</span>
+        </a>
       </div>
 
       <div class="copy-toast" id="copyToast">
@@ -394,24 +398,6 @@
   </footer>
 
   <script>
-    const candidateLogos = [
-      'Favicon.jpeg',
-      'favicon.jpeg',
-      'favicon.png',
-      'Favicon.png',
-      'favicon.jpg',
-      'Favicon.jpg',
-      'logo.png',
-      'logo.jpeg'
-    ];
-    let candidateIndex = 0;
-    function tryNextLogo(img) {
-      candidateIndex++;
-      if (candidateIndex < candidateLogos.length) {
-        img.src = candidateLogos[candidateIndex];
-      }
-    }
-
     function copyEmail() {
       const email = 'ferdayounes@gmail.com';
       if (navigator.clipboard && window.isSecureContext) {
