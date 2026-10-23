@@ -65,18 +65,16 @@
     .brand-img {
       position: relative;
       z-index: 1;
-      max-width: 140px;
-      max-height: 140px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25), 0 0 20px rgba(138, 43, 226, 0.15);
+      width: 100%;
+      max-width: 270px;
+      max-height: 170px;
       object-fit: contain;
-      background: #000;
-      padding: 6px;
-      border: 2px solid rgba(0, 229, 255, 0.35);
+      background: transparent;
+      padding: 0;
+      border: none;
+      filter: drop-shadow(0 10px 25px rgba(0, 229, 255, 0.35));
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.4s ease,
-                  filter 0.4s ease;
+                  filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .svg-fallback-logo {
       position: relative;
@@ -89,18 +87,19 @@
       box-shadow: 0 10px 30px rgba(0, 229, 255, 0.25);
       padding: 12px;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.4s ease;
+                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     /* Glowing Hover State on Logo */
-    .brand-logo-wrap:hover .brand-img,
+    .brand-logo-wrap:hover .brand-img {
+      transform: translateY(-5px) scale(1.06);
+      filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.85)) 
+              drop-shadow(0 0 50px rgba(138, 43, 226, 0.65));
+    }
     .brand-logo-wrap:hover .svg-fallback-logo {
       transform: translateY(-5px) scale(1.05);
       border-color: #00E5FF;
       box-shadow: 0 0 35px rgba(0, 229, 255, 0.7), 
-                  0 0 60px rgba(138, 43, 226, 0.45), 
-                  0 15px 35px rgba(0, 0, 0, 0.7);
-      filter: brightness(1.08) drop-shadow(0 0 12px rgba(0, 229, 255, 0.6));
+                  0 0 60px rgba(138, 43, 226, 0.45);
     }
     .brand-title {
       font-size: 34px;
@@ -108,6 +107,7 @@
       letter-spacing: 1.5px;
       background: linear-gradient(135deg, #00E5FF 0%, #8A2BE2 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 6px;
       transition: filter 0.3s ease;
@@ -240,7 +240,7 @@
       align-items: center;
       gap: 8px;
       background: linear-gradient(135deg, #00E5FF 0%, #00B4D8 100%);
-      color: #000 !0important;
+      color: #000 !important;
       font-weight: 800;
       padding: 12px 26px;
       border-radius: 99px;
@@ -301,26 +301,13 @@
 
   <header class="header">
     <div class="brand-logo-wrap">
-      <!-- Try loading uploaded logo files (favicon.png.jfif / logo.png), otherwise smoothly fall back to crisp SVG logo -->
-      <img src="favicon.png.jfif" alt="SKAW LABS Logo" class="brand-img" id="brandLogoImg" 
-           onerror="this.onerror=null; this.src='favicon.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('svgFallback').style.display='block'; };">
-      
-      <svg id="svgFallback" class="svg-fallback-logo" style="display: none;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="cyanPurple" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#00E5FF"/>
-            <stop offset="50%" stop-color="#0077B6"/>
-            <stop offset="100%" stop-color="#8A2BE2"/>
-          </linearGradient>
-        </defs>
-        <!-- Futuristic 3D Infinity S Emblem -->
-        <path d="M 50 20 C 35 20, 20 32, 20 50 C 20 68, 35 80, 50 80 C 65 80, 80 68, 80 50 C 80 32, 65 20, 50 20 Z" stroke="url(#cyanPurple)" stroke-width="8" stroke-linecap="round" fill="none"/>
-        <path d="M 30 50 Q 50 30, 70 50 Q 50 70, 30 50" stroke="#00E5FF" stroke-width="6" stroke-linecap="round" fill="none"/>
-      </svg>
+      <!-- Directly load favicon.png uploaded to the repository -->
+      <img src="favicon.png" alt="SKAW LABS" class="brand-img" id="brandLogoImg" 
+           onerror="this.onerror=null; this.src='logo.png';">
     </div>
     
-    <h1 class="brand-title">SKAW LABS</h1>
-    <p class="app-subtitle">Official Customer Support & Developer Hub</p>
+    <h1 class="brand-title">Developer Support Center</h1>
+    <p class="app-subtitle">Official Customer Care & Technical Hub</p>
     <p class="desc">Technical assistance, customer care, and privacy management for <strong>SkawFit: Workout & Diet Plan</strong> and Skaw Labs applications on iOS, iPadOS, and Apple Watch.</p>
   </header>
 
